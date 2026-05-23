@@ -247,17 +247,48 @@
         padding: 12px 0; border-top: 1px solid #1e293b;
       }
       .nav-links.open { display: flex; }
+      .nav-links .btn-primary { width: 100%; text-align: center; padding: 12px; }
+      .nav-links a:not(.btn-primary) { padding: 8px 0; font-size: 1em; }
       section { padding: 36px 16px; }
       .section-block { padding: 24px 16px; }
       .card-grid { grid-template-columns: 1fr; }
-      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .stat-card { padding: 18px 12px; }
+      .stat-card .num { font-size: 1.5em; }
       .steps { flex-direction: column; align-items: center; }
       .step { max-width: 100%; }
       .hero-actions { flex-direction: column; align-items: center; }
       .hero-actions a { width: 100%; text-align: center; }
       .chat-mock { padding: 16px; }
+      .chat-msg .bubble { max-width: 90%; font-size: 0.85em; }
       .cta-final { padding: 40px 20px; margin: 0 8px 20px; }
-      .tab-btn { padding: 10px 20px; font-size: 0.85em; }
+      .tab-btn { padding: 10px 14px; font-size: 0.8em; white-space: nowrap; }
+      .tab-bar { gap: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+      .tab-bar::-webkit-scrollbar { display: none; }
+      .faq-question { font-size: 0.9em; padding: 14px 16px; }
+      .faq-answer { font-size: 0.88em; }
+      .hero-badge { font-size: 0.75em; padding: 4px 12px; }
+      .logo { font-size: 1.2em; }
+      .assistant-preview { padding: 24px 16px; }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 { font-size: 1.4em; }
+      .hero p { font-size: 1em; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .stat-card { padding: 14px 10px; }
+      .stat-card .num { font-size: 1.3em; }
+      .stat-card .label { font-size: 0.7em; }
+      .stat-card .icon { font-size: 1em; }
+      .tab-btn { padding: 8px 12px; font-size: 0.75em; }
+      section { padding: 28px 12px; }
+      .section-block { padding: 20px 12px; border-radius: 14px; }
+      .card { padding: 18px; }
+      .card p { font-size: 0.85em; }
+      .cta-final h2 { font-size: 1.3em; }
+      .cta-final p { font-size: 0.9em; }
+      .step h3 { font-size: 0.9em; }
+      .step p { font-size: 0.8em; }
     }
   </style>
 </head>

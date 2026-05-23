@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TickTrust ✅ — Confianza para cada reparación</title>
+  <title data-i18n="page-title">TickTrust ✅ — Confianza para cada reparación</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -37,6 +37,12 @@
     .nav-links { display: flex; gap: 24px; align-items: center; }
     .nav-links a { color: #94a3b8; font-weight: 500; transition: 0.2s; }
     .nav-links a:hover { color: white; }
+    .lang-btn {
+      background: none; border: 1px solid #475569; color: #94a3b8;
+      padding: 4px 10px; border-radius: 8px; font-size: 0.8em; font-weight: 600;
+      cursor: pointer; transition: 0.2s; white-space: nowrap;
+    }
+    .lang-btn:hover { border-color: #22c55e; color: #22c55e; }
     .btn-primary {
       background: #3b82f6; color: white; padding: 10px 24px; border-radius: 10px;
       font-weight: 600; border: none; cursor: pointer; transition: 0.2s;
@@ -217,6 +223,7 @@
 
     /* ===== MENU MOBILE ===== */
     .menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.8em; cursor: pointer; padding: 4px; }
+    .lang-btn-mobile { display: none; }
 
     /* ===== TAB SWITCHER ===== */
     .tab-bar {
@@ -249,6 +256,14 @@
       .nav-links.open { display: flex; }
       .nav-links .btn-primary { width: 100%; text-align: center; padding: 12px; }
       .nav-links a:not(.btn-primary) { padding: 8px 0; font-size: 1em; }
+      .lang-btn { display: none; }
+      .lang-btn-mobile {
+        display: inline-block; width: 100%; text-align: center;
+        background: none; border: 1px solid #475569; color: #94a3b8;
+        padding: 10px; border-radius: 10px; font-size: 0.9em; font-weight: 600;
+        cursor: pointer; transition: 0.2s;
+      }
+      .lang-btn-mobile:hover { border-color: #22c55e; color: #22c55e; }
       section { padding: 36px 16px; }
       .section-block { padding: 24px 16px; }
       .card-grid { grid-template-columns: 1fr; }
@@ -301,30 +316,32 @@
   </div>
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   <div class="nav-links" id="navLinks">
-    <a href="#cliente">Clientes</a>
-    <a href="#talleres">Talleres</a>
-    <a href="#asistente">Asistente</a>
-    <a href="#faq">FAQ</a>
-    <a href="https://t.me/Byker8412_bot" target="_blank" class="btn-primary">🤖 Consultar</a>
+    <a href="#cliente" data-i18n="nav-clients">Clientes</a>
+    <a href="#talleres" data-i18n="nav-techs">Talleres</a>
+    <a href="#asistente" data-i18n="nav-assistant">Asistente</a>
+    <a href="#faq" data-i18n="nav-faq">FAQ</a>
+    <a href="https://t.me/Byker8412_bot" target="_blank" class="btn-primary" data-i18n="nav-consult">🤖 Consultar</a>
+    <button class="lang-btn" onclick="toggleLang()" title="Switch language">🌐 ES</button>
   </div>
+  <button class="lang-btn-mobile" onclick="toggleLang()">🌐 ES</button>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <span class="hero-badge">✅ Alicante · Experiencia real en reparaciones</span>
-  <h1>
+  <span class="hero-badge" data-i18n="hero-badge">✅ Alicante · Experiencia real en reparaciones</span>
+  <h1 data-i18n="hero-title">
     ¿Reparar tu móvil sin saber<br>
     si te van a <span class="highlight">timar</span>?<br>
     Con <span class="check">TickTrust</span> no.
   </h1>
-  <p>
+  <p data-i18n="hero-subtitle">
     Información clara, precios orientativos y un asistente que te explica todo
     antes de que dejes tu dispositivo. +2.600 reparaciones reales nos avalan.
   </p>
   <div class="hero-actions">
-    <a href="https://t.me/Byker8412_bot" target="_blank" class="btn-primary">✅ Consulta al asistente</a>
-    <a href="#cliente" class="btn-secondary">Para clientes</a>
-    <a href="#talleres" class="btn-secondary">Para talleres</a>
+    <a href="https://t.me/Byker8412_bot" target="_blank" class="btn-primary" data-i18n="hero-cta-assistant">✅ Consulta al asistente</a>
+    <a href="#cliente" class="btn-secondary" data-i18n="hero-cta-clients">Para clientes</a>
+    <a href="#talleres" class="btn-secondary" data-i18n="hero-cta-techs">Para talleres</a>
   </div>
 </div>
 
@@ -334,32 +351,32 @@
     <div class="stat-card">
       <span class="icon">🔧</span>
       <span class="num">2.682</span>
-      <span class="label">Reparaciones realizadas</span>
+      <span class="label" data-i18n="stat-repairs">Reparaciones realizadas</span>
     </div>
     <div class="stat-card">
       <span class="icon">📅</span>
       <span class="num">2,5 años</span>
-      <span class="label">De experiencia en taller</span>
+      <span class="label" data-i18n="stat-experience">De experiencia en taller</span>
     </div>
     <div class="stat-card">
       <span class="icon">📱</span>
       <span class="num">+20 marcas</span>
-      <span class="label">Gestionadas</span>
+      <span class="label" data-i18n="stat-brands">Gestionadas</span>
     </div>
     <div class="stat-card">
       <span class="icon">📍</span>
       <span class="num">Alicante</span>
-      <span class="label">Zona de servicio</span>
+      <span class="label" data-i18n="stat-zone">Zona de servicio</span>
     </div>
     <div class="stat-card">
       <span class="icon">🍎</span>
       <span class="num">31%</span>
-      <span class="label">Fueron Apple</span>
+      <span class="label" data-i18n="stat-apple">Fueron Apple</span>
     </div>
     <div class="stat-card">
       <span class="icon">📺</span>
       <span class="num">41%</span>
-      <span class="label">Cambios de pantalla</span>
+      <span class="label" data-i18n="stat-screens">Cambios de pantalla</span>
     </div>
   </div>
 </section>
@@ -367,8 +384,8 @@
 <!-- TABS: CLIENTE / TALLER -->
 <div style="max-width:1100px; margin:0 auto; padding:0 20px;">
   <div class="tab-bar">
-    <button class="tab-btn active" onclick="switchTab('cliente', this)">👤 Para clientes</button>
-    <button class="tab-btn" onclick="switchTab('taller', this)">🔧 Para talleres</button>
+    <button class="tab-btn active" onclick="switchTab('cliente', this)" data-i18n="tab-clients">👤 Para clientes</button>
+    <button class="tab-btn" onclick="switchTab('taller', this)" data-i18n="tab-techs">🔧 Para talleres</button>
   </div>
 </div>
 
@@ -376,48 +393,48 @@
 <div id="tab-cliente" class="tab-content active" style="max-width:1100px; margin:0 auto;">
   <section id="cliente" style="padding-top:0;">
     <div class="section-block clients">
-      <h2>¿Eres cliente? Así te ayudamos</h2>
-      <p class="subtitle">Reparar no debería ser una lotería</p>
+      <h2 data-i18n="client-title">¿Eres cliente? Así te ayudamos</h2>
+      <p class="subtitle" data-i18n="client-subtitle">Reparar no debería ser una lotería</p>
       <div class="card-grid">
         <div class="card">
           <span class="emoji">😰</span>
-          <h3>No sabes a quién llevarlo</h3>
-          <p>Miras Google, ves 5 talleres, reseñas mezcladas. ¿Cuál es de fiar? TickTrust verifica talleres para que no tengas que adivinar.</p>
+          <h3 data-i18n="client-card1-title">No sabes a quién llevarlo</h3>
+          <p data-i18n="client-card1-text">Miras Google, ves 5 talleres, reseñas mezcladas. ¿Cuál es de fiar? TickTrust verifica talleres para que no tengas que adivinar.</p>
         </div>
         <div class="card">
           <span class="emoji">💸</span>
-          <h3>¿Cuánto debería costar?</h3>
-          <p>"Pantalla rota, 200€" — ¿es caro o normal? Nuestro asistente te da precios orientativos basados en reparaciones reales.</p>
+          <h3 data-i18n="client-card2-title">¿Cuánto debería costar?</h3>
+          <p data-i18n="client-card2-text">"Pantalla rota, 200€" — ¿es caro o normal? Nuestro asistente te da precios orientativos basados en reparaciones reales.</p>
         </div>
         <div class="card">
           <span class="emoji">🔇</span>
-          <h3>No entiendes la jerga técnica</h3>
-          <p>"El flex de la BP está dañado" — ¿eso qué significa? El asistente te lo traduce a cristiano antes de que decidas.</p>
+          <h3 data-i18n="client-card3-title">No entiendes la jerga técnica</h3>
+          <p data-i18n="client-card3-text">"El flex de la BP está dañado" — ¿eso qué significa? El asistente te lo traduce a cristiano antes de que decidas.</p>
         </div>
         <div class="card">
           <span class="emoji">✅</span>
-          <h3>Talleres con sello TickTrust</h3>
-          <p>Técnicos verificados que no te toman el pelo. Sabes que dejas tu dispositivo en buenas manos.</p>
+          <h3 data-i18n="client-card4-title">Talleres con sello TickTrust</h3>
+          <p data-i18n="client-card4-text">Técnicos verificados que no te toman el pelo. Sabes que dejas tu dispositivo en buenas manos.</p>
         </div>
       </div>
 
       <div style="text-align:center; margin-top:32px;">
-        <h3 style="margin-bottom:16px; color:#1e293b;">Cómo funciona:</h3>
+        <h3 style="margin-bottom:16px; color:#1e293b;" data-i18n="client-how-title">Cómo funciona:</h3>
         <div class="steps" style="gap:16px;">
           <div class="step" style="max-width:220px;">
             <div class="num">1</div>
-            <h3>Pregunta al asistente</h3>
-            <p style="font-size:0.85em">Describe tu problema en el bot de Telegram. Te orientamos al instante.</p>
+            <h3 data-i18n="client-step1-title">Pregunta al asistente</h3>
+            <p style="font-size:0.85em" data-i18n="client-step1-text">Describe tu problema en el bot de Telegram. Te orientamos al instante.</p>
           </div>
           <div class="step" style="max-width:220px;">
             <div class="num">2</div>
-            <h3>Recibe info clara</h3>
-            <p style="font-size:0.85em">Qué puede ser, cuánto suele costar, qué preguntar en el taller.</p>
+            <h3 data-i18n="client-step2-title">Recibe info clara</h3>
+            <p style="font-size:0.85em" data-i18n="client-step2-text">Qué puede ser, cuánto suele costar, qué preguntar en el taller.</p>
           </div>
           <div class="step" style="max-width:220px;">
             <div class="num">3</div>
-            <h3>Repara con confianza ✅</h3>
-            <p style="font-size:0.85em">Taller recomendado con sello TickTrust o directamente con Javi en Alicante.</p>
+            <h3 data-i18n="client-step3-title">Repara con confianza ✅</h3>
+            <p style="font-size:0.85em" data-i18n="client-step3-text">Taller recomendado con sello TickTrust o directamente con Javi en Alicante.</p>
           </div>
         </div>
       </div>
@@ -429,52 +446,52 @@
 <div id="tab-taller" class="tab-content" style="max-width:1100px; margin:0 auto;">
   <section id="talleres" style="padding-top:0;">
     <div class="section-block techs">
-      <h2>¿Eres técnico? Únete al sello ✅</h2>
-      <p class="subtitle">Deja de ser "uno más" y conviértete en el taller de referencia de tu zona</p>
+      <h2 data-i18n="tech-title">¿Eres técnico? Únete al sello ✅</h2>
+      <p class="subtitle" data-i18n="tech-subtitle">Deja de ser "uno más" y conviértete en el taller de referencia de tu zona</p>
       <div class="card-grid">
         <div class="card tech">
           <span class="emoji" style="color:white;">📈</span>
-          <h3>Clientes que ya vienen informados</h3>
-          <p>Llegan sabiendo lo que necesitan y el precio orientativo. Menos pérdidas de tiempo, más reparaciones cerradas.</p>
+          <h3 data-i18n="tech-card1-title">Clientes que ya vienen informados</h3>
+          <p data-i18n="tech-card1-text">Llegan sabiendo lo que necesitan y el precio orientativo. Menos pérdidas de tiempo, más reparaciones cerradas.</p>
         </div>
         <div class="card tech">
           <span class="emoji" style="color:white;">🛡️</span>
-          <h3>Sello de confianza que te diferencia</h3>
-          <p>En un mar de talleres sin garantías, el ✅ TickTrust te posiciona como profesional verificado.</p>
+          <h3 data-i18n="tech-card2-title">Sello de confianza que te diferencia</h3>
+          <p data-i18n="tech-card2-text">En un mar de talleres sin garantías, el ✅ TickTrust te posiciona como profesional verificado.</p>
         </div>
         <div class="card tech">
           <span class="emoji" style="color:white;">🤝</span>
-          <h3>Derivación de clientes</h3>
-          <p>Cuando alguien busca taller en tu zona, se lo recomendamos. Clientes que ya confían en TickTrust.</p>
+          <h3 data-i18n="tech-card3-title">Derivación de clientes</h3>
+          <p data-i18n="tech-card3-text">Cuando alguien busca taller en tu zona, se lo recomendamos. Clientes que ya confían en TickTrust.</p>
         </div>
         <div class="card tech">
           <span class="emoji" style="color:white;">📊</span>
-          <h3>Datos y tendencias del sector</h3>
-          <p>Acceso a estadísticas reales: qué se repara más, precios de mercado, fallos comunes por modelo.</p>
+          <h3 data-i18n="tech-card4-title">Datos y tendencias del sector</h3>
+          <p data-i18n="tech-card4-text">Acceso a estadísticas reales: qué se repara más, precios de mercado, fallos comunes por modelo.</p>
         </div>
       </div>
 
       <div style="text-align:center; margin-top:32px;">
-        <h3 style="margin-bottom:12px; color:white;">Cómo unirse al sello:</h3>
+        <h3 style="margin-bottom:12px; color:white;" data-i18n="tech-how-title">Cómo unirse al sello:</h3>
         <div class="steps" style="gap:16px;">
           <div class="step" style="max-width:220px;">
             <div class="num">1</div>
-            <h3>Cuéntanos quién eres</h3>
-            <p style="font-size:0.85em">Tu taller, tu experiencia, tu zona. Verificamos que eres profesional.</p>
+            <h3 data-i18n="tech-step1-title">Cuéntanos quién eres</h3>
+            <p style="font-size:0.85em" data-i18n="tech-step1-text">Tu taller, tu experiencia, tu zona. Verificamos que eres profesional.</p>
           </div>
           <div class="step" style="max-width:220px;">
             <div class="num">2</div>
-            <h3>Recibe tu sello ✅</h3>
-            <p style="font-size:0.85em">Te incluimos en nuestra red de talleres de confianza con tu perfil público.</p>
+            <h3 data-i18n="tech-step2-title">Recibe tu sello ✅</h3>
+            <p style="font-size:0.85em" data-i18n="tech-step2-text">Te incluimos en nuestra red de talleres de confianza con tu perfil público.</p>
           </div>
           <div class="step" style="max-width:220px;">
             <div class="num">3</div>
-            <h3>Empiezan a llegar clientes</h3>
-            <p style="font-size:0.85em">Te derivamos clientes de tu zona que ya han consultado al asistente.</p>
+            <h3 data-i18n="tech-step3-title">Empiezan a llegar clientes</h3>
+            <p style="font-size:0.85em" data-i18n="tech-step3-text">Te derivamos clientes de tu zona que ya han consultado al asistente.</p>
           </div>
         </div>
         <div style="margin-top:24px;">
-          <a href="https://t.me/Byker8412_bot" target="_blank" class="btn-primary green" style="font-size:1em; padding:14px 32px;">📩 Quiero el sello TickTrust</a>
+          <a href="https://t.me/Byker8412_bot" target="_blank" class="btn-primary green" style="font-size:1em; padding:14px 32px;" data-i18n="tech-cta">📩 Quiero el sello TickTrust</a>
         </div>
       </div>
     </div>
@@ -484,19 +501,19 @@
 <!-- ASSISTANT PREVIEW -->
 <section id="asistente">
   <div class="assistant-preview">
-    <h2>Habla con el asistente TickTrust</h2>
-    <p class="subtitle">Resuelve tus dudas antes de mover un dedo</p>
+    <h2 data-i18n="assistant-title">Habla con el asistente TickTrust</h2>
+    <p class="subtitle" data-i18n="assistant-subtitle">Resuelve tus dudas antes de mover un dedo</p>
     <div class="chat-mock">
       <div class="chat-msg user">
         <div class="avatar">Tú</div>
         <div class="bubble">
-          Mi Samsung Galaxy A54 no carga. Lo conecto y no hace nada. ¿Qué puede ser?
+          data-i18n="chat-user-msg">Mi Samsung Galaxy A54 no carga. Lo conecto y no hace nada. ¿Qué puede ser?
         </div>
       </div>
       <div class="chat-msg bot">
         <div class="avatar">✅</div>
         <div class="bubble">
-          <div class="label">Asistente TickTrust</div>
+          <div class="label" data-i18n="chat-bot-label">Asistente TickTrust</div>
           ✋ Tranquilo, es un fallo muy común.<br><br>
           📌 <strong>Lo más probable:</strong> el puerto de carga tiene pelusa o está sucio. Una limpieza suele bastar.<br><br>
           📌 <strong>Si no funciona:</strong> el flex de carga está dañado. Es una reparación asequible y rápida.<br><br>
@@ -505,69 +522,69 @@
         </div>
       </div>
       <div class="chat-input-mock">
-        <input type="text" placeholder="Escribe tu problema aquí..." disabled>
-        <button disabled>Enviar</button>
+        <input type="text" placeholder="Escribe tu problema aquí..." data-i18n="assistant-placeholder" disabled>
+        <button disabled data-i18n="assistant-send">Enviar</button>
       </div>
     </div>
     <div class="assistant-cta">
-      👉 <a href="https://t.me/Byker8412_bot" target="_blank">Pruébalo ahora en Telegram →</a>
+      👉 <a href="https://t.me/Byker8412_bot" target="_blank" data-i18n="assistant-cta">Pruébalo ahora en Telegram →</a>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
 <section id="faq">
-  <h2>Dudas frecuentes</h2>
-  <p class="subtitle">Lo que más preguntan antes de reparar</p>
+  <h2 data-i18n="faq-title">Dudas frecuentes</h2>
+  <p class="subtitle" data-i18n="faq-subtitle">Lo que más preguntan antes de reparar</p>
   <div class="faq-list">
 
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>¿Cuánto cuesta cambiar una pantalla de móvil?</span>
+        <span data-i18n="faq-q1">¿Cuánto cuesta cambiar una pantalla de móvil?</span>
         <span class="arrow">▼</span>
       </div>
       <div class="faq-answer">
-        Depende del modelo. Gama baja (50–80€), gama media (80–150€), gama alta (150–300€). Pregunta siempre si incluye mano de obra y si la pantalla es original o compatible. Si tienes un modelo concreto, pregúntale al <a href="https://t.me/Byker8412_bot" style="color:#3b82f6;text-decoration:underline;">asistente</a>.
+        data-i18n="faq-a1" <a href="https://t.me/Byker8412_bot" style="color:#3b82f6;text-decoration:underline;">asistente</a>.
       </div>
     </div>
 
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>Mi móvil se calienta mucho, ¿es normal?</span>
+        <span data-i18n="faq-q2">Mi móvil se calienta mucho, ¿es normal?</span>
         <span class="arrow">▼</span>
       </div>
       <div class="faq-answer">
-        Un poco de calor al cargar o usar apps pesadas es normal. Si quema al tacto o se apaga solo, puede ser batería hinchada o problema de carga. No lo dejes y llévalo a revisar.
+        data-i18n="faq-a2"
       </div>
     </div>
 
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>¿Cómo sé si un taller es de fiar?</span>
+        <span data-i18n="faq-q3">¿Cómo sé si un taller es de fiar?</span>
         <span class="arrow">▼</span>
       </div>
       <div class="faq-answer">
-        Señales de alerta: no te dan presupuesto por escrito, te piden el móvil "para mirarlo" sin darte tiempo, las reseñas son todas de cuentas sin foto. Un taller de confianza te explica el problema, te da un presupuesto desglosado y te pregunta antes de hacer nada extra.
+        data-i18n="faq-a3"
       </div>
     </div>
 
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>¿Puedo confiar en el diagnóstico del bot?</span>
+        <span data-i18n="faq-q4">¿Puedo confiar en el diagnóstico del bot?</span>
         <span class="arrow">▼</span>
       </div>
       <div class="faq-answer">
-        El asistente TickTrust está basado en experiencia real de reparaciones y conocimiento técnico contrastado. Te da una orientación fiable, pero para un diagnóstico definitivo hace falta ver el dispositivo. Piensa en él como tu primer filtro de confianza.
+        data-i18n="faq-a4"
       </div>
     </div>
 
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <span>¿Solo reparáis en Alicante?</span>
+        <span data-i18n="faq-q5">¿Solo reparáis en Alicante?</span>
         <span class="arrow">▼</span>
       </div>
       <div class="faq-answer">
-        La reparación directa con Javi es en Alicante provincia. Pero el sello TickTrust y la red de talleres de confianza funciona en toda España. Pregunta al asistente y te recomendamos el taller más cercano a ti.
+        data-i18n="faq-a5"
       </div>
     </div>
 
@@ -576,34 +593,230 @@
 
 <!-- FINAL CTA -->
 <div class="cta-final">
-  <h2>¿Listo para reparar sin miedo?</h2>
-  <p>Habla con el asistente TickTrust ahora. Es gratis, responde al instante,<br>y te ayuda a tomar la decisión correcta.</p>
-  <a href="https://t.me/Byker8412_bot" target="_blank" class="btn-primary">✅ Hablar con el asistente</a>
+  <h2 data-i18n="cta-title">¿Listo para reparar sin miedo?</h2>
+  <p data-i18n="cta-text">Habla con el asistente TickTrust ahora. Es gratis, responde al instante,<br>y te ayuda a tomar la decisión correcta.</p>
+  <a href="https://t.me/Byker8412_bot" target="_blank" class="btn-primary" data-i18n="cta-button">✅ Hablar con el asistente</a>
 </div>
 
-<footer>
+<footer data-i18n="footer">
   TickTrust ✅ — Confianza para cada reparación · Alicante · 2026
 </footer>
 
 <script>
+  // ===== i18n =====
+  const i18n = {
+    ES: {
+      'page-title': 'TickTrust ✅ — Confianza para cada reparación',
+      'nav-clients': 'Clientes',
+      'nav-techs': 'Talleres',
+      'nav-assistant': 'Asistente',
+      'nav-faq': 'FAQ',
+      'nav-consult': '🤖 Consultar',
+      'hero-badge': '✅ Alicante · Experiencia real en reparaciones',
+      'hero-title': '¿Reparar tu móvil sin saber<br>si te van a <span class="highlight">timar</span>?<br>Con <span class="check">TickTrust</span> no.',
+      'hero-subtitle': 'Información clara, precios orientativos y un asistente que te explica todo antes de que dejes tu dispositivo. +2.600 reparaciones reales nos avalan.',
+      'hero-cta-assistant': '✅ Consulta al asistente',
+      'hero-cta-clients': 'Para clientes',
+      'hero-cta-techs': 'Para talleres',
+      'stat-repairs': 'Reparaciones realizadas',
+      'stat-experience': 'De experiencia en taller',
+      'stat-brands': 'Gestionadas',
+      'stat-zone': 'Zona de servicio',
+      'stat-apple': 'Fueron Apple',
+      'stat-screens': 'Cambios de pantalla',
+      'tab-clients': '👤 Para clientes',
+      'tab-techs': '🔧 Para talleres',
+      'client-title': '¿Eres cliente? Así te ayudamos',
+      'client-subtitle': 'Reparar no debería ser una lotería',
+      'client-card1-title': 'No sabes a quién llevarlo',
+      'client-card1-text': 'Miras Google, ves 5 talleres, reseñas mezcladas. ¿Cuál es de fiar? TickTrust verifica talleres para que no tengas que adivinar.',
+      'client-card2-title': '¿Cuánto debería costar?',
+      'client-card2-text': '"Pantalla rota, 200€" — ¿es caro o normal? Nuestro asistente te da precios orientativos basados en reparaciones reales.',
+      'client-card3-title': 'No entiendes la jerga técnica',
+      'client-card3-text': '"El flex de la BP está dañado" — ¿eso qué significa? El asistente te lo traduce a cristiano antes de que decidas.',
+      'client-card4-title': 'Talleres con sello TickTrust',
+      'client-card4-text': 'Técnicos verificados que no te toman el pelo. Sabes que dejas tu dispositivo en buenas manos.',
+      'client-how-title': 'Cómo funciona:',
+      'client-step1-title': 'Pregunta al asistente',
+      'client-step1-text': 'Describe tu problema en el bot de Telegram. Te orientamos al instante.',
+      'client-step2-title': 'Recibe info clara',
+      'client-step2-text': 'Qué puede ser, cuánto suele costar, qué preguntar en el taller.',
+      'client-step3-title': 'Repara con confianza ✅',
+      'client-step3-text': 'Taller recomendado con sello TickTrust o directamente con Javi en Alicante.',
+      'tech-title': '¿Eres técnico? Únete al sello ✅',
+      'tech-subtitle': 'Deja de ser "uno más" y conviértete en el taller de referencia de tu zona',
+      'tech-card1-title': 'Clientes que ya vienen informados',
+      'tech-card1-text': 'Llegan sabiendo lo que necesitan y el precio orientativo. Menos pérdidas de tiempo, más reparaciones cerradas.',
+      'tech-card2-title': 'Sello de confianza que te diferencia',
+      'tech-card2-text': 'En un mar de talleres sin garantías, el ✅ TickTrust te posiciona como profesional verificado.',
+      'tech-card3-title': 'Derivación de clientes',
+      'tech-card3-text': 'Cuando alguien busca taller en tu zona, se lo recomendamos. Clientes que ya confían en TickTrust.',
+      'tech-card4-title': 'Datos y tendencias del sector',
+      'tech-card4-text': 'Acceso a estadísticas reales: qué se repara más, precios de mercado, fallos comunes por modelo.',
+      'tech-how-title': 'Cómo unirse al sello:',
+      'tech-step1-title': 'Cuéntanos quién eres',
+      'tech-step1-text': 'Tu taller, tu experiencia, tu zona. Verificamos que eres profesional.',
+      'tech-step2-title': 'Recibe tu sello ✅',
+      'tech-step2-text': 'Te incluimos en nuestra red de talleres de confianza con tu perfil público.',
+      'tech-step3-title': 'Empiezan a llegar clientes',
+      'tech-step3-text': 'Te derivamos clientes de tu zona que ya han consultado al asistente.',
+      'tech-cta': '📩 Quiero el sello TickTrust',
+      'assistant-title': 'Habla con el asistente TickTrust',
+      'assistant-subtitle': 'Resuelve tus dudas antes de mover un dedo',
+      'chat-user-msg': 'Mi Samsung Galaxy A54 no carga. Lo conecto y no hace nada. ¿Qué puede ser?',
+      'chat-bot-label': 'Asistente TickTrust',
+      'assistant-placeholder': 'Escribe tu problema aquí...',
+      'assistant-send': 'Enviar',
+      'assistant-cta': 'Pruébalo ahora en Telegram →',
+      'faq-title': 'Dudas frecuentes',
+      'faq-subtitle': 'Lo que más preguntan antes de reparar',
+      'faq-q1': '¿Cuánto cuesta cambiar una pantalla de móvil?',
+      'faq-q2': 'Mi móvil se calienta mucho, ¿es normal?',
+      'faq-q3': '¿Cómo sé si un taller es de fiar?',
+      'faq-q4': '¿Puedo confiar en el diagnóstico del bot?',
+      'faq-q5': '¿Solo reparáis en Alicante?',
+      'faq-a1': 'Depende del modelo. Gama baja (50–80€), gama media (80–150€), gama alta (150–300€). Pregunta siempre si incluye mano de obra y si la pantalla es original o compatible. Si tienes un modelo concreto, pregúntale al',
+      'faq-a2': 'Un poco de calor al cargar o usar apps pesadas es normal. Si quema al tacto o se apaga solo, puede ser batería hinchada o problema de carga. No lo dejes y llévalo a revisar.',
+      'faq-a3': 'Señales de alerta: no te dan presupuesto por escrito, te piden el móvil "para mirarlo" sin darte tiempo, las reseñas son todas de cuentas sin foto. Un taller de confianza te explica el problema, te da un presupuesto desglosado y te pregunta antes de hacer nada extra.',
+      'faq-a4': 'El asistente TickTrust está basado en experiencia real de reparaciones y conocimiento técnico contrastado. Te da una orientación fiable, pero para un diagnóstico definitivo hace falta ver el dispositivo. Piensa en él como tu primer filtro de confianza.',
+      'faq-a5': 'La reparación directa con Javi es en Alicante provincia. Pero el sello TickTrust y la red de talleres de confianza funciona en toda España. Pregunta al asistente y te recomendamos el taller más cercano a ti.',
+      'cta-title': '¿Listo para reparar sin miedo?',
+      'cta-text': 'Habla con el asistente TickTrust ahora. Es gratis, responde al instante,<br>y te ayuda a tomar la decisión correcta.',
+      'cta-button': '✅ Hablar con el asistente',
+      'footer': 'TickTrust ✅ — Confianza para cada reparación · Alicante · 2026',
+    },
+    EN: {
+      'page-title': 'TickTrust ✅ — Trust for every repair',
+      'nav-clients': 'Clients',
+      'nav-techs': 'Workshops',
+      'nav-assistant': 'Assistant',
+      'nav-faq': 'FAQ',
+      'nav-consult': '🤖 Ask',
+      'hero-badge': '✅ Alicante · Real repair experience',
+      'hero-title': 'Fix your phone without<br>worrying about getting <span class="highlight">ripped off</span>?<br>With <span class="check">TickTrust</span> you won\'t.',
+      'hero-subtitle': 'Clear info, fair prices, and an assistant that explains everything before you leave your device. +2,600 real repairs back us up.',
+      'hero-cta-assistant': '✅ Ask the assistant',
+      'hero-cta-clients': 'For clients',
+      'hero-cta-techs': 'For workshops',
+      'stat-repairs': 'Repairs done',
+      'stat-experience': 'Years of experience',
+      'stat-brands': 'Brands handled',
+      'stat-zone': 'Service area',
+      'stat-apple': 'Were Apple',
+      'stat-screens': 'Screen replacements',
+      'tab-clients': '👤 For clients',
+      'tab-techs': '🔧 For workshops',
+      'client-title': 'Are you a client? Here\'s how we help',
+      'client-subtitle': 'Repairing shouldn\'t be a gamble',
+      'client-card1-title': 'Don\'t know who to trust',
+      'client-card1-text': 'You search Google, see 5 shops, mixed reviews. Which one is reliable? TickTrust verifies workshops so you don\'t have to guess.',
+      'client-card2-title': 'How much should it cost?',
+      'client-card2-text': '"Broken screen, 200€" — is that expensive or normal? Our assistant gives you price estimates based on real repairs.',
+      'client-card3-title': 'Don\'t understand the tech jargon',
+      'client-card3-text': '"The flex cable is damaged" — what does that even mean? The assistant translates it into plain English before you decide.',
+      'client-card4-title': 'Workshops with TickTrust seal',
+      'client-card4-text': 'Verified technicians who won\'t rip you off. You know your device is in good hands.',
+      'client-how-title': 'How it works:',
+      'client-step1-title': 'Ask the assistant',
+      'client-step1-text': 'Describe your issue in the Telegram bot. We guide you instantly.',
+      'client-step2-title': 'Get clear info',
+      'client-step2-text': 'What it could be, typical cost, what to ask at the shop.',
+      'client-step3-title': 'Repair with confidence ✅',
+      'client-step3-text': 'Recommended workshop with TickTrust seal or directly with Javi in Alicante.',
+      'tech-title': 'Are you a technician? Join the seal ✅',
+      'tech-subtitle': 'Stop being "just another shop" and become the reference in your area',
+      'tech-card1-title': 'Informed customers arrive ready',
+      'tech-card1-text': 'They know what they need and the estimated price. Less time wasted, more repairs closed.',
+      'tech-card2-title': 'Trust seal that sets you apart',
+      'tech-card2-text': 'In a sea of unreliable shops, the ✅ TickTrust positions you as a verified professional.',
+      'tech-card3-title': 'Customer referrals',
+      'tech-card3-text': 'When someone looks for a shop in your area, we recommend you. Customers who already trust TickTrust.',
+      'tech-card4-title': 'Industry data & trends',
+      'tech-card4-text': 'Access to real stats: most repaired issues, market prices, common failures by model.',
+      'tech-how-title': 'How to join the seal:',
+      'tech-step1-title': 'Tell us about yourself',
+      'tech-step1-text': 'Your workshop, your experience, your area. We verify you are a pro.',
+      'tech-step2-title': 'Get your seal ✅',
+      'tech-step2-text': 'We add you to our trusted workshop network with your public profile.',
+      'tech-step3-title': 'Start receiving customers',
+      'tech-step3-text': 'We refer customers from your area who have already consulted the assistant.',
+      'tech-cta': '📩 I want the TickTrust seal',
+      'assistant-title': 'Talk to the TickTrust assistant',
+      'assistant-subtitle': 'Get your questions answered before lifting a finger',
+      'chat-user-msg': 'My Samsung Galaxy A54 won\'t charge. I plug it in and nothing happens. What could it be?',
+      'chat-bot-label': 'TickTrust Assistant',
+      'assistant-placeholder': 'Type your issue here...',
+      'assistant-send': 'Send',
+      'assistant-cta': 'Try it now on Telegram →',
+      'faq-title': 'Frequently Asked Questions',
+      'faq-subtitle': 'What people ask most before repairing',
+      'faq-q1': 'How much does it cost to replace a phone screen?',
+      'faq-q2': 'My phone gets very hot, is that normal?',
+      'faq-q3': 'How do I know if a workshop is trustworthy?',
+      'faq-q4': 'Can I trust the bot\'s diagnosis?',
+      'faq-q5': 'Do you only repair in Alicante?',
+      'faq-a1': 'Depends on the model. Budget (50–80€), mid-range (80–150€), high-end (150–300€). Always ask if labor is included and if the screen is original or compatible. If you have a specific model, ask the',
+      'faq-a2': 'Some warmth while charging or using heavy apps is normal. If it burns to the touch or shuts down, it could be a swollen battery or charging issue. Don\'t ignore it, get it checked.',
+      'faq-a3': 'Red flags: no written estimate, they ask for your phone "to check" without giving you time, all reviews from accounts with no photos. A trustworthy shop explains the issue, gives you an itemized quote, and asks before doing anything extra.',
+      'faq-a4': 'The TickTrust assistant is based on real repair experience and solid technical knowledge. It gives you a reliable orientation, but for a definitive diagnosis the device needs to be seen. Think of it as your first trust filter.',
+      'faq-a5': 'Direct repair with Javi is in Alicante province. But the TickTrust seal and workshop network works across Spain. Ask the assistant and we\'ll recommend the nearest shop to you.',
+      'cta-title': 'Ready to repair without fear?',
+      'cta-text': 'Talk to the TickTrust assistant now. It\'s free, responds instantly,<br>and helps you make the right decision.',
+      'cta-button': '✅ Talk to the assistant',
+      'footer': 'TickTrust ✅ — Trust for every repair · Alicante · 2026',
+    }
+  };
+
+  let currentLang = localStorage.getItem('ticktrust_lang') || 'ES';
+
+  function applyLang(lang) {
+    const dict = i18n[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) {
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          el.placeholder = dict[key];
+        } else {
+          el.innerHTML = dict[key];
+        }
+      }
+    });
+    // Update lang buttons
+    document.querySelectorAll('.lang-btn, .lang-btn-mobile').forEach(b => {
+      b.textContent = '🌐 ' + (lang === 'ES' ? 'ES' : 'EN');
+    });
+    document.documentElement.lang = lang === 'ES' ? 'es' : 'en';
+    currentLang = lang;
+    localStorage.setItem('ticktrust_lang', lang);
+  }
+
+  function toggleLang() {
+    applyLang(currentLang === 'ES' ? 'EN' : 'ES');
+  }
+
+  // ===== FAQ =====
   function toggleFaq(el) {
     el.classList.toggle('open');
     const answer = el.nextElementSibling;
     answer.classList.toggle('open');
   }
+
+  // ===== Menu =====
   function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('open');
   }
+
+  // ===== Tabs =====
   function switchTab(tab, btn) {
-    // Quitar active de todos los tabs y contenidos
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    // Activar el seleccionado
     btn.classList.add('active');
     document.getElementById('tab-' + tab).classList.add('active');
-    // Scroll suave a la sección
     document.getElementById(tab === 'cliente' ? 'cliente' : 'talleres').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+
+  // ===== Init =====
+  applyLang(currentLang);
 </script>
 
 </body>

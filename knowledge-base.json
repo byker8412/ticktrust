@@ -1,0 +1,252 @@
+{
+  "nombre": "Base de Conocimiento TickTrust",
+  "version": "1.0",
+  "actualizado": "2026-05-19",
+  "fuente": "Experiencia real de reparaciones de Javi",
+  "categorias": [
+    {
+      "id": "no-carga",
+      "nombre": "El dispositivo no carga",
+      "preguntas": [
+        {
+          "id": "carga-1",
+          "sintoma": "Mi móvil no carga nada",
+          "soluciones": [
+            "60% de los casos: suciedad en el puerto de carga. Limpieza con palillo de plástico o aire comprimido.",
+            "25% de los casos: flex de carga dañado por uso. Sustitución: 25-40€.",
+            "10% de los casos: problema en el conector de la placa (microsoldadura). Reparación: 50-80€.",
+            "5% de los casos: fallo en el circuito integrado de carga. Reparación: 60-100€."
+          ],
+          "precio_orientativo": "0€ (limpieza) - 40€ (flex)",
+          "recomendacion": "Prueba otro cable y cargador primero. Lleva el móvil a revisar si nada funciona.",
+          "tiempo_reparacion": "15 min (limpieza) - 45 min (cambio flex)"
+        },
+        {
+          "id": "carga-2",
+          "sintoma": "Carga muy lento o solo en cierta posición",
+          "soluciones": [
+            "80% de los casos: flex de carga dañado o sucio. Cambio de flex: 25-40€.",
+            "15% de los casos: cable/cargador en mal estado (prueba con otro).",
+            "5% de los casos: humedad en el puerto (deja secar 24h con arroz/sílice)."
+          ],
+          "precio_orientativo": "0€ (cable nuevo) - 40€ (flex nuevo)",
+          "recomendacion": "Prueba otro cargador/cable antes de cualquier cosa.",
+          "tiempo_reparacion": "30 min"
+        }
+      ]
+    },
+    {
+      "id": "pantalla-rota",
+      "nombre": "Pantalla rota o no funciona",
+      "preguntas": [
+        {
+          "id": "pantalla-1",
+          "sintoma": "Se me ha caído el móvil y la pantalla se ha roto",
+          "soluciones": [
+            "Si el táctil aún funciona: solo cambiar el cristal (laminado) - más barato pero requiere más tiempo.",
+            "Si el táctil no funciona o hay manchas negras: pantalla completa - más caro pero más fiable.",
+            "Comprueba que no hay daño en la carcasa que pueda estar presionando la pantalla nueva."
+          ],
+          "precio_orientativo": "Gama baja: 50-80€ | Gama media: 80-150€ | Gama alta: 150-300€",
+          "recomendacion": "Si el móvil tiene más de 3-4 años, valora si merece la pena antes de cambiar la pantalla.",
+          "tiempo_reparacion": "30-90 min según modelo"
+        },
+        {
+          "id": "pantalla-2",
+          "sintoma": "La pantalla se ve negra pero el móvil suena/vibra",
+          "soluciones": [
+            "50% de los casos: el conector del flex de pantalla se ha soltado (golpe). Reapertura y conexión.",
+            "40% de los casos: pantalla rota internamente (golpe seco). Cambio de pantalla.",
+            "10% de los casos: fallo en el circuito de alimentación de pantalla en placa."
+          ],
+          "precio_orientativo": "30-60€ (conexión/placa) - 50-300€ (pantalla nueva)",
+          "recomendacion": "Haz una llamada al móvil. Si suena, hay esperanza de que sea solo el flex.",
+          "tiempo_reparacion": "30-90 min"
+        }
+      ]
+    },
+    {
+      "id": "bateria",
+      "nombre": "Problemas de batería",
+      "preguntas": [
+        {
+          "id": "bateria-1",
+          "sintoma": "La batería dura muy poco",
+          "soluciones": [
+            "Si tiene más de 2 años: la batería ha perdido capacidad química. Cambio de batería: 30-60€.",
+            "Apps en segundo plano consumiendo recursos: revisa uso de batería en ajustes.",
+            "Actualización reciente que consume más: a veces vuelve a la normalidad tras unos días."
+          ],
+          "precio_orientativo": "30-60€ según modelo",
+          "recomendacion": "Si tienes Android, instala AccuBattery para medir la salud real de la batería.",
+          "tiempo_reparacion": "30-45 min"
+        },
+        {
+          "id": "bateria-2",
+          "sintoma": "La batería se hincha o la tapa trasera se separa",
+          "soluciones": [
+            "⚠️ PELIGRO: batería de litio hinchada. Deja de cargarlo inmediatamente.",
+            "No pinches la batería ni la forces. Puede incendiarse.",
+            "Llévalo a un profesional para que la cambie y recicle la batería dañada."
+          ],
+          "precio_orientativo": "40-70€ (cambio + gestión residuos)",
+          "recomendacion": "URGENTE: no lo uses ni lo cargues. La batería puede explotar.",
+          "tiempo_reparacion": "30 min"
+        }
+      ]
+    },
+    {
+      "id": "no-enciende",
+      "nombre": "El dispositivo no enciende",
+      "preguntas": [
+        {
+          "id": "enciende-1",
+          "sintoma": "Mi móvil no enciende tras dejarlo cargando toda la noche",
+          "soluciones": [
+            "40% de los casos: batería completamente descargada (descarga profunda). Dejarlo cargando lento 30 min.",
+            "30% de los casos: flex de carga dañado (cargaba pero no hacía contacto real).",
+            "20% de los casos: fallo de software (pantalla congelada). Forzar reinicio: botón power + bajar volumen 10-15 seg.",
+            "10% de los casos: fallo hardware grave (placa)."
+          ],
+          "precio_orientativo": "0€ (reinicio forzado) - 40-100€ (hardware)",
+          "recomendacion": "Primero prueba el reinicio forzado. Luego déjalo cargar 30 min con otro cargador.",
+          "tiempo_reparacion": "5 min (software) - 1-2h (hardware)"
+        },
+        {
+          "id": "enciende-2",
+          "sintoma": "El PC no arranca, se queda en pantalla negra",
+          "soluciones": [
+            "50% de los casos: RAM mal colocada o sucia. Limpiar contactos con goma de borrar y reinsertar.",
+            "20% de los casos: fuente de alimentación dañada. Hace clic pero no da potencia suficiente.",
+            "15% de los casos: disco duro/SSD fallando. Se queda colgado en la detección.",
+            "10% de los casos: placa base con condensadores dañados (hinchados).",
+            "5% de los casos: BIOS corrupta. Resetear BIOS quitando la pila."
+          ],
+          "precio_orientativo": "0€ (limpiar RAM) - 50-80€ (fuente nueva)",
+          "recomendacion": "Desconecta todo (USB, discos extra) y prueba a arrancar solo con lo básico (placa, RAM, CPU).",
+          "tiempo_reparacion": "15 min - 1h"
+        }
+      ]
+    },
+    {
+      "id": "sin-sonido",
+      "nombre": "Problemas de sonido",
+      "preguntas": [
+        {
+          "id": "sonido-1",
+          "sintoma": "El altavoz no suena o suena distorsionado",
+          "soluciones": [
+            "60% de los casos: suciedad en la rejilla del altavoz. Limpieza con cepillo suave.",
+            "25% de los casos: imán del altavoz desplazado por golpe. Sustitución: 15-30€.",
+            "15% de los casos: flex de audio dañado (humedad o golpe)."
+          ],
+          "precio_orientativo": "0€ (limpieza) - 15-30€ (altavoz nuevo)",
+          "recomendacion": "Si suena distorsionado, prueba con auriculares para descartar que sea la placa.",
+          "tiempo_reparacion": "15-30 min"
+        },
+        {
+          "id": "sonido-2",
+          "sintoma": "No se me oye cuando llamo (micrófono)",
+          "soluciones": [
+            "50% de los casos: suciedad en el micrófono. Soplido suave o limpieza profesional.",
+            "40% de los casos: flex de micrófono dañado (humedad o golpe). Sustitución: 20-40€.",
+            "10% de los casos: fallo en la placa base (señal de audio)."
+          ],
+          "precio_orientativo": "0€ (limpieza) - 20-40€ (micrófono)",
+          "recomendacion": "Prueba con llamada por WhatsApp o altavoz para ver si el problema es solo en llamadas normales.",
+          "tiempo_reparacion": "20-40 min"
+        }
+      ]
+    },
+    {
+      "id": "wifi-bt",
+      "nombre": "WiFi o Bluetooth no funcionan",
+      "preguntas": [
+        {
+          "id": "wifi-1",
+          "sintoma": "El WiFi no se activa o no encuentra redes",
+          "soluciones": [
+            "45% de los casos: fallo en el chip WiFi por sobrecalentamiento o golpe. Requiere reballing o cambio de chip.",
+            "30% de los casos: fallo de software. Reset de red o restauración de fábrica.",
+            "20% de los casos: antena desoldada. Abrir y reconectar.",
+            "5% de los casos: IMEI perdido (fallo de placa más grave)."
+          ],
+          "precio_orientativo": "0€ (reset de red) - 50-100€ (chip WiFi)",
+          "recomendacion": "Antes de nada, prueba un reset de red en ajustes. Si no funciona, necesita revisión.",
+          "tiempo_reparacion": "1-2h (chip)"
+        }
+      ]
+    },
+    {
+      "id": "ordenador-lento",
+      "nombre": "PC lento o congelado",
+      "preguntas": [
+        {
+          "id": "pc-lento-1",
+          "sintoma": "Mi ordenador va muy lento desde hace semanas",
+          "soluciones": [
+            "Mejor inversión: cambiar disco duro HDD por SSD. El salto de velocidad es enorme.",
+            "Ampliar RAM si tiene menos de 8GB.",
+            "Reinstalar Windows o limpiar programas del inicio.",
+            "Revisar temperatura: si el procesador se sobrecalienta, reduce velocidad para protegerse."
+          ],
+          "precio_orientativo": "40-80€ (SSD nuevo) · 30-60€ (RAM) · 50€ (formateo + instalación)",
+          "recomendacion": "Empieza por lo barato: desinstala programas que no uses y mira el estado del disco.",
+          "tiempo_reparacion": "1-3h según el alcance"
+        },
+        {
+          "id": "pc-lento-2",
+          "sintoma": "El PC se congela y hay que reiniciarlo",
+          "soluciones": [
+            "40% de los casos: sobrecalentamiento. Limpiar el polvo del ventilador y cambiar pasta térmica.",
+            "30% de los casos: RAM defectuosa. Ejecuta MemTest86 para comprobarlo.",
+            "20% de los casos: disco duro con sectores defectuosos. Revisar con CrystalDiskInfo.",
+            "10% de los casos: fuente de alimentación inestable."
+          ],
+          "precio_orientativo": "0-30€ (limpieza + pasta térmica) - 50-80€ (fuente nueva)",
+          "recomendacion": "Descarga CrystalDiskInfo y Mira la temperatura con HWMonitor. Eso ya te da pistas.",
+          "tiempo_reparacion": "30 min - 2h"
+        }
+      ]
+    },
+    {
+      "id": "agua-humedad",
+      "nombre": "Daño por agua o humedad",
+      "preguntas": [
+        {
+          "id": "agua-1",
+          "sintoma": "Se me ha caído el móvil al agua / café",
+          "soluciones": [
+            "⚠️ NO lo conectes a la corriente. NO uses secador (empuja el agua dentro).",
+            "Sácalo del agua inmediatamente, apágalo si está encendido.",
+            "Quita la funda, la tarjeta SIM y la tarjeta SD.",
+            "Sécalo con un paño suave. Déjalo en un recipiente con arroz o sílice 24-48h.",
+            "Si no enciende después, necesita limpieza ultrasónica profesional: 40-80€."
+          ],
+          "precio_orientativo": "0€ (arroz/sílice) - 40-80€ (limpieza ultrasónica en taller)",
+          "recomendacion": "NO lo cargues hasta que estés 100% seguro de que está seco. La electricidad + agua = cortocircuito.",
+          "tiempo_reparacion": "24-48h de secado + 1-2h de limpieza si es necesario"
+        }
+      ]
+    },
+    {
+      "id": "no-ticks",
+      "nombre": "Talleres para técnicos",
+      "preguntas": [
+        {
+          "id": "taller-1",
+          "sintoma": "Soy técnico/taller. ¿Cómo consigo el sello TickTrust?",
+          "soluciones": [
+            "Ponte en contacto con Javi a través del bot de Telegram.",
+            "Verificamos tu trabajo, experiencia y reseñas.",
+            "Si cumples los estándares, recibes el ✅ para mostrar en tu local.",
+            "Recibes clientes derivados de TickTrust que ya vienen informados."
+          ],
+          "precio_orientativo": "Por determinar",
+          "recomendacion": "Cuantos más talleres de confianza, más fuerte es TickTrust para todos.",
+          "tiempo_reparacion": "Proceso de verificación: 1-2 semanas"
+        }
+      ]
+    }
+  ]
+}

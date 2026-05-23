@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TickTrust ✅ — Confianza para cada reparación</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== NAV ===== */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      background: #0f172a;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 1.5em;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .logo .tick { color: #22c55e; font-size: 1.2em; }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { color: #94a3b8; font-weight: 500; transition: 0.2s; }
+    .nav-links a:hover { color: white; }
+    .btn-primary {
+      background: #3b82f6; color: white; padding: 10px 24px; border-radius: 10px;
+      font-weight: 600; border: none; cursor: pointer; transition: 0.2s;
+    }
+    .btn-primary:hover { background: #2563eb; transform: translateY(-1px); }
+    .btn-primary.green { background: #22c55e; }
+    .btn-primary.green:hover { background: #16a34a; }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 80px 40px 60px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block; background: #dcfce7; color: #166534;
+      padding: 6px 16px; border-radius: 20px; font-size: 0.85em; font-weight: 600; margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: 3em; font-weight: 800; line-height: 1.15; margin-bottom: 20px;
+    }
+    .hero h1 .highlight { color: #3b82f6; }
+    .hero h1 .check { color: #22c55e; }
+    .hero p {
+      font-size: 1.2em; color: #64748b; max-width: 650px; margin: 0 auto 32px;
+    }
+    .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-secondary {
+      background: white; color: #1e293b; padding: 10px 24px; border-radius: 10px;
+      font-weight: 600; border: 1px solid #e2e8f0; cursor: pointer; transition: 0.2s;
+    }
+    .btn-secondary:hover { border-color: #3b82f6; color: #3b82f6; }
+
+    /* ===== SECTIONS GENERIC ===== */
+    section { padding: 60px 40px; max-width: 1100px; margin: 0 auto; }
+    section h2 { font-size: 2em; font-weight: 700; margin-bottom: 12px; text-align: center; }
+    section .subtitle { color: #64748b; text-align: center; margin-bottom: 40px; font-size: 1.1em; }
+
+    /* ===== PROBLEM (clients) ===== */
+    .section-block {
+      background: var(--bg, #f1f5f9);
+      border-radius: 20px;
+      padding: 50px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-block.clients { --bg: #f1f5f9; }
+    .section-block.techs { --bg: #0f172a; }
+
+    .section-block.clients h2 { color: #1e293b; }
+    .section-block.techs h2 { color: white; }
+    .section-block.techs .subtitle { color: #94a3b8; }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .card {
+      background: white; padding: 24px; border-radius: 14px;
+      border-left: 4px solid #3b82f6;
+    }
+    .card h3 { margin-bottom: 8px; font-size: 1.05em; }
+    .card p { color: #64748b; font-size: 0.95em; }
+    .card .emoji { font-size: 1.5em; margin-bottom: 8px; display: block; }
+
+    .card.tech {
+      background: #1e293b; border-left-color: #22c55e;
+    }
+    .card.tech h3 { color: white; }
+    .card.tech p { color: #94a3b8; }
+
+    /* ===== STATS ===== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .stat-card {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white; border-radius: 16px; padding: 24px 16px; text-align: center;
+    }
+    .stat-card .num {
+      font-size: 2em; font-weight: 800; color: #22c55e; display: block;
+    }
+    .stat-card .label { font-size: 0.8em; color: #94a3b8; margin-top: 6px; }
+    .stat-card .icon { font-size: 1.3em; margin-bottom: 8px; display: block; }
+
+    /* ===== STEPS (how it works) ===== */
+    .steps {
+      display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;
+    }
+    .step {
+      background: white; border: 1px solid #e2e8f0; border-radius: 16px;
+      padding: 28px; flex: 1; min-width: 200px; max-width: 300px; text-align: center;
+    }
+    .step .num {
+      width: 40px; height: 40px; background: #3b82f6; color: white;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-weight: 700; margin: 0 auto 16px;
+    }
+    .step h3 { margin-bottom: 8px; }
+    .step p { color: #64748b; font-size: 0.95em; }
+
+    /* ===== ASSISTANT ===== */
+    .assistant-preview {
+      background: #0f172a; border-radius: 20px; padding: 40px; color: white;
+    }
+    .assistant-preview h2 { color: white; }
+    .assistant-preview .subtitle { color: #94a3b8; }
+    .chat-mock {
+      background: #1e293b; border-radius: 16px; padding: 24px; max-width: 600px; margin: 0 auto;
+    }
+    .chat-msg { margin-bottom: 16px; display: flex; gap: 12px; }
+    .chat-msg .avatar {
+      width: 34px; height: 34px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9em; flex-shrink: 0;
+    }
+    .chat-msg.user .avatar { background: #3b82f6; color: white; }
+    .chat-msg.bot .avatar { background: #22c55e; color: white; font-size: 0.8em; }
+    .chat-msg .bubble {
+      background: #334155; padding: 12px 16px; border-radius: 12px;
+      font-size: 0.95em; line-height: 1.5; max-width: 85%;
+    }
+    .chat-msg.user .bubble { background: #1d4ed8; }
+    .chat-msg.bot .bubble { background: #1e293b; border: 1px solid #334155; }
+    .chat-msg .bubble .label { font-size: 0.75em; color: #94a3b8; margin-bottom: 4px; font-weight: 600; }
+    .chat-input-mock { display: flex; gap: 8px; margin-top: 18px; }
+    .chat-input-mock input {
+      flex: 1; background: #1e293b; border: 1px solid #334155; border-radius: 10px;
+      padding: 12px 16px; color: white; font-size: 0.95em;
+    }
+    .chat-input-mock input::placeholder { color: #475569; }
+    .chat-input-mock button {
+      background: #22c55e; border: none; border-radius: 10px;
+      padding: 12px 20px; color: white; font-weight: 600; cursor: pointer;
+    }
+    .assistant-cta { text-align: center; margin-top: 28px; }
+    .assistant-cta a { color: #22c55e; font-weight: 600; border-bottom: 2px solid transparent; transition: 0.2s; }
+    .assistant-cta a:hover { border-bottom-color: #22c55e; }
+
+    /* ===== FAQ ===== */
+    .faq-list { max-width: 700px; margin: 0 auto; }
+    .faq-item {
+      border: 1px solid #e2e8f0; border-radius: 12px; margin-bottom: 12px; overflow: hidden;
+    }
+    .faq-question {
+      padding: 16px 20px; font-weight: 600; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      background: white; transition: 0.2s;
+    }
+    .faq-question:hover { background: #f8fafc; }
+    .faq-question .arrow { transition: 0.3s; color: #94a3b8; }
+    .faq-question.open .arrow { transform: rotate(180deg); }
+    .faq-answer {
+      padding: 0 20px; max-height: 0; overflow: hidden; transition: 0.3s;
+      color: #64748b; font-size: 0.95em; line-height: 1.6;
+    }
+    .faq-answer.open { padding: 0 20px 16px; max-height: 300px; }
+    .faq-answer strong { color: #1e293b; }
+
+    /* ===== CTA ===== */
+    .cta-final {
+      text-align: center; padding: 60px 40px; background: #0f172a;
+      border-radius: 20px; color: white; max-width: 1100px; margin: 0 auto 40px;
+    }
+    .cta-final h2 { color: white; }
+    .cta-final p { color: #94a3b8; margin-bottom: 28px; }
+    .cta-final .btn-primary { font-size: 1.1em; padding: 14px 36px; }
+
+    /* ===== FOOTER ===== */
+    footer { text-align: center; padding: 24px; color: #94a3b8; font-size: 0.85em; }
+
+    /* ===== MENU MOBILE ===== */
+    .menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.8em; cursor: pointer; padding: 4px; }
+
+    /* ===== TAB SWITCHER ===== */
+    .tab-bar {
+      display: flex; justify-content: center; gap: 0; margin-bottom: 30px;
+    }
+    .tab-btn {
+      padding: 12px 32px; font-weight: 600; font-size: 1em; cursor: pointer;
+      border: 2px solid #e2e8f0; background: white; color: #64748b;
+      transition: 0.2s;
+    }
+    .tab-btn:first-child { border-radius: 12px 0 0 12px; }
+    .tab-btn:last-child { border-radius: 0 12px 12px 0; }
+    .tab-btn.active {
+      background: #3b82f6; color: white; border-color: #3b82f6;
+    }
+    .tab-btn:hover:not(.active) { background: #f1f5f9; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 700px) {
+      .hero h1 { font-size: 1.7em; }
+      .hero { padding: 50px 20px 40px; }
+      nav { padding: 12px 20px; }
+      .menu-toggle { display: block; }
+      .nav-links {
+        display: none; width: 100%; flex-direction: column; gap: 10px;
+        padding: 12px 0; border-top: 1px solid #1e293b;
+      }
+      .nav-links.open { display: flex; }
+      section { padding: 36px 16px; }
+      .section-block { padding: 24px 16px; }
+      .card-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .steps { flex-direction: column; align-items: center; }
+      .step { max-width: 100%; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .hero-actions a { width: 100%; text-align: center; }
+      .chat-mock { padding: 16px; }
+      .cta-final { padding: 40px 20px; margin: 0 8px 20px; }
+      .tab-btn { padding: 10px 20px; font-size: 0.85em; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <span class="tick">✅</span> TickTrust
+  </div>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <div class="nav-links" id="navLinks">
+    <a href="#cliente">Clientes</a>
+    <a href="#talleres">Talleres</a>
+    <a href="#asistente">Asistente</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://t.me/Byker8412_bot" target="_blank" class="btn-primary">🤖 Consultar</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-badge">✅ Alicante · Experiencia real en reparaciones</span>
+  <h1>
+    ¿Reparar tu móvil sin saber<br>
+    si te van a <span class="highlight">timar</span>?<br>
+    Con <span class="check">TickTrust</span> no.
+  </h1>
+  <p>
+    Información clara, precios orientativos y un asistente que te explica todo
+    antes de que dejes tu dispositivo. +2.600 reparaciones reales nos avalan.
+  </p>
+  <div class="hero-actions">
+    <a href="https://t.me/Byker8412_bot" target="_blank" class="btn-primary">✅ Consulta al asistente</a>
+    <a href="#cliente" class="btn-secondary">Para clientes</a>
+    <a href="#talleres" class="btn-secondary">Para talleres</a>
+  </div>
+</div>
+
+<!-- CREDIBILITY STATS (sin dinero) -->
+<section id="credibilidad">
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="icon">🔧</span>
+      <span class="num">2.682</span>
+      <span class="label">Reparaciones realizadas</span>
+    </div>
+    <div class="stat-card">
+      <span class="icon">📅</span>
+      <span class="num">2,5 años</span>
+      <span class="label">De experiencia en taller</span>
+    </div>
+    <div class="stat-card">
+      <span class="icon">📱</span>
+      <span class="num">+20 marcas</span>
+      <span class="label">Gestionadas</span>
+    </div>
+    <div class="stat-card">
+      <span class="icon">📍</span>
+      <span class="num">Alicante</span>
+      <span class="label">Zona de servicio</span>
+    </div>
+    <div class="stat-card">
+      <span class="icon">🍎</span>
+      <span class="num">31%</span>
+      <span class="label">Fueron Apple</span>
+    </div>
+    <div class="stat-card">
+      <span class="icon">📺</span>
+      <span class="num">41%</span>
+      <span class="label">Cambios de pantalla</span>
+    </div>
+  </div>
+</section>
+
+<!-- TABS: CLIENTE / TALLER -->
+<div style="max-width:1100px; margin:0 auto; padding:0 20px;">
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('cliente', this)">👤 Para clientes</button>
+    <button class="tab-btn" onclick="switchTab('taller', this)">🔧 Para talleres</button>
+  </div>
+</div>
+
+<!-- TAB: CLIENTE -->
+<div id="tab-cliente" class="tab-content active" style="max-width:1100px; margin:0 auto;">
+  <section id="cliente" style="padding-top:0;">
+    <div class="section-block clients">
+      <h2>¿Eres cliente? Así te ayudamos</h2>
+      <p class="subtitle">Reparar no debería ser una lotería</p>
+      <div class="card-grid">
+        <div class="card">
+          <span class="emoji">😰</span>
+          <h3>No sabes a quién llevarlo</h3>
+          <p>Miras Google, ves 5 talleres, reseñas mezcladas. ¿Cuál es de fiar? TickTrust verifica talleres para que no tengas que adivinar.</p>
+        </div>
+        <div class="card">
+          <span class="emoji">💸</span>
+          <h3>¿Cuánto debería costar?</h3>
+          <p>"Pantalla rota, 200€" — ¿es caro o normal? Nuestro asistente te da precios orientativos basados en reparaciones reales.</p>
+        </div>
+        <div class="card">
+          <span class="emoji">🔇</span>
+          <h3>No entiendes la jerga técnica</h3>
+          <p>"El flex de la BP está dañado" — ¿eso qué significa? El asistente te lo traduce a cristiano antes de que decidas.</p>
+        </div>
+        <div class="card">
+          <span class="emoji">✅</span>
+          <h3>Talleres con sello TickTrust</h3>
+          <p>Técnicos verificados que no te toman el pelo. Sabes que dejas tu dispositivo en buenas manos.</p>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:32px;">
+        <h3 style="margin-bottom:16px; color:#1e293b;">Cómo funciona:</h3>
+        <div class="steps" style="gap:16px;">
+          <div class="step" style="max-width:220px;">
+            <div class="num">1</div>
+            <h3>Pregunta al asistente</h3>
+            <p style="font-size:0.85em">Describe tu problema en el bot de Telegram. Te orientamos al instante.</p>
+          </div>
+          <div class="step" style="max-width:220px;">
+            <div class="num">2</div>
+            <h3>Recibe info clara</h3>
+            <p style="font-size:0.85em">Qué puede ser, cuánto suele costar, qué preguntar en el taller.</p>
+          </div>
+          <div class="step" style="max-width:220px;">
+            <div class="num">3</div>
+            <h3>Repara con confianza ✅</h3>
+            <p style="font-size:0.85em">Taller recomendado con sello TickTrust o directamente con Javi en Alicante.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- TAB: TALLER -->
+<div id="tab-taller" class="tab-content" style="max-width:1100px; margin:0 auto;">
+  <section id="talleres" style="padding-top:0;">
+    <div class="section-block techs">
+      <h2>¿Eres técnico? Únete al sello ✅</h2>
+      <p class="subtitle">Deja de ser "uno más" y conviértete en el taller de referencia de tu zona</p>
+      <div class="card-grid">
+        <div class="card tech">
+          <span class="emoji" style="color:white;">📈</span>
+          <h3>Clientes que ya vienen informados</h3>
+          <p>Llegan sabiendo lo que necesitan y el precio orientativo. Menos pérdidas de tiempo, más reparaciones cerradas.</p>
+        </div>
+        <div class="card tech">
+          <span class="emoji" style="color:white;">🛡️</span>
+          <h3>Sello de confianza que te diferencia</h3>
+          <p>En un mar de talleres sin garantías, el ✅ TickTrust te posiciona como profesional verificado.</p>
+        </div>
+        <div class="card tech">
+          <span class="emoji" style="color:white;">🤝</span>
+          <h3>Derivación de clientes</h3>
+          <p>Cuando alguien busca taller en tu zona, se lo recomendamos. Clientes que ya confían en TickTrust.</p>
+        </div>
+        <div class="card tech">
+          <span class="emoji" style="color:white;">📊</span>
+          <h3>Datos y tendencias del sector</h3>
+          <p>Acceso a estadísticas reales: qué se repara más, precios de mercado, fallos comunes por modelo.</p>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:32px;">
+        <h3 style="margin-bottom:12px; color:white;">Cómo unirse al sello:</h3>
+        <div class="steps" style="gap:16px;">
+          <div class="step" style="max-width:220px;">
+            <div class="num">1</div>
+            <h3>Cuéntanos quién eres</h3>
+            <p style="font-size:0.85em">Tu taller, tu experiencia, tu zona. Verificamos que eres profesional.</p>
+          </div>
+          <div class="step" style="max-width:220px;">
+            <div class="num">2</div>
+            <h3>Recibe tu sello ✅</h3>
+            <p style="font-size:0.85em">Te incluimos en nuestra red de talleres de confianza con tu perfil público.</p>
+          </div>
+          <div class="step" style="max-width:220px;">
+            <div class="num">3</div>
+            <h3>Empiezan a llegar clientes</h3>
+            <p style="font-size:0.85em">Te derivamos clientes de tu zona que ya han consultado al asistente.</p>
+          </div>
+        </div>
+        <div style="margin-top:24px;">
+          <a href="https://t.me/Byker8412_bot" target="_blank" class="btn-primary green" style="font-size:1em; padding:14px 32px;">📩 Quiero el sello TickTrust</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ASSISTANT PREVIEW -->
+<section id="asistente">
+  <div class="assistant-preview">
+    <h2>Habla con el asistente TickTrust</h2>
+    <p class="subtitle">Resuelve tus dudas antes de mover un dedo</p>
+    <div class="chat-mock">
+      <div class="chat-msg user">
+        <div class="avatar">Tú</div>
+        <div class="bubble">
+          Mi Samsung Galaxy A54 no carga. Lo conecto y no hace nada. ¿Qué puede ser?
+        </div>
+      </div>
+      <div class="chat-msg bot">
+        <div class="avatar">✅</div>
+        <div class="bubble">
+          <div class="label">Asistente TickTrust</div>
+          ✋ Tranquilo, es un fallo muy común.<br><br>
+          📌 <strong>Lo más probable:</strong> el puerto de carga tiene pelusa o está sucio. Una limpieza suele bastar.<br><br>
+          📌 <strong>Si no funciona:</strong> el flex de carga está dañado. Es una reparación asequible y rápida.<br><br>
+          📌 <strong>Lo menos común:</strong> problema en la placa base, pero es raro.<br><br>
+          💡 ¿Quieres que te recomiende un taller cerca de ti?
+        </div>
+      </div>
+      <div class="chat-input-mock">
+        <input type="text" placeholder="Escribe tu problema aquí..." disabled>
+        <button disabled>Enviar</button>
+      </div>
+    </div>
+    <div class="assistant-cta">
+      👉 <a href="https://t.me/Byker8412_bot" target="_blank">Pruébalo ahora en Telegram →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <h2>Dudas frecuentes</h2>
+  <p class="subtitle">Lo que más preguntan antes de reparar</p>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>¿Cuánto cuesta cambiar una pantalla de móvil?</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        Depende del modelo. Gama baja (50–80€), gama media (80–150€), gama alta (150–300€). Pregunta siempre si incluye mano de obra y si la pantalla es original o compatible. Si tienes un modelo concreto, pregúntale al <a href="https://t.me/Byker8412_bot" style="color:#3b82f6;text-decoration:underline;">asistente</a>.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Mi móvil se calienta mucho, ¿es normal?</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        Un poco de calor al cargar o usar apps pesadas es normal. Si quema al tacto o se apaga solo, puede ser batería hinchada o problema de carga. No lo dejes y llévalo a revisar.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>¿Cómo sé si un taller es de fiar?</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        Señales de alerta: no te dan presupuesto por escrito, te piden el móvil "para mirarlo" sin darte tiempo, las reseñas son todas de cuentas sin foto. Un taller de confianza te explica el problema, te da un presupuesto desglosado y te pregunta antes de hacer nada extra.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>¿Puedo confiar en el diagnóstico del bot?</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        El asistente TickTrust está basado en experiencia real de reparaciones y conocimiento técnico contrastado. Te da una orientación fiable, pero para un diagnóstico definitivo hace falta ver el dispositivo. Piensa en él como tu primer filtro de confianza.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>¿Solo reparáis en Alicante?</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        La reparación directa con Javi es en Alicante provincia. Pero el sello TickTrust y la red de talleres de confianza funciona en toda España. Pregunta al asistente y te recomendamos el taller más cercano a ti.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="cta-final">
+  <h2>¿Listo para reparar sin miedo?</h2>
+  <p>Habla con el asistente TickTrust ahora. Es gratis, responde al instante,<br>y te ayuda a tomar la decisión correcta.</p>
+  <a href="https://t.me/Byker8412_bot" target="_blank" class="btn-primary">✅ Hablar con el asistente</a>
+</div>
+
+<footer>
+  TickTrust ✅ — Confianza para cada reparación · Alicante · 2026
+</footer>
+
+<script>
+  function toggleFaq(el) {
+    el.classList.toggle('open');
+    const answer = el.nextElementSibling;
+    answer.classList.toggle('open');
+  }
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  function switchTab(tab, btn) {
+    // Quitar active de todos los tabs y contenidos
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    // Activar el seleccionado
+    btn.classList.add('active');
+    document.getElementById('tab-' + tab).classList.add('active');
+    // Scroll suave a la sección
+    document.getElementById(tab === 'cliente' ? 'cliente' : 'talleres').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
+
+</body>
+</html>
